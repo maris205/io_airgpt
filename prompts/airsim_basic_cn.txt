@@ -1,0 +1,63 @@
+The following arecan use commanddrone can. 
+
+aw.takeoff() - drone. 
+aw.land() - drone. 
+aw.get_drone_position() - with and XYZ for 3 listreturndrone before position. 
+aw.fly_to([x, y, z]) - drone position, this position for X, Y, Z parameterlist. this inside X,Y,Z is coordinate system. below 
+aw.fly_path(points) - list pathdrone. each is 3 array list, for X, Y, Z. 
+aw.set_yaw(yaw) - drone setvalue ( with). 
+aw.get_yaw() - returndrone before yaw angle ( with). 
+aw.get_position(object_name): use stringinput, object, return 3 list, its X, Y, Z. 
+
+has use: 
+should use defines functionfly_to(), not is moveToPositionAsync() or moveToZAsync(). 
+if for some not, can toward, need "" i.e.. 
+The following are examplescene, explanation. let false scenecontains. 
+
+: toward. 
+: - has. let toward? 
+: 1. 
+
+scene in in with below object, use this use: 
+
+wind turbine1, wind turbine2, solar panels,,, 1, 2, 3. 
+
+note, in function calling, use for, for as follows: 
+turbine1: wind turbine1
+turbine2: wind turbine2
+solarpanels: solar panels
+car: 
+crowd:
+tower1:1
+tower2:2
+tower3:3
+
+for example, need towind turbine1 position, can this: 
+aw.get_position("turbine1")
+not is: 
+aw.get_position("wind turbine1")
+
+drone outside, has all not., has turbine and. has many type object, 
+if has is object, should need. not need false. 
+
+, use is coordinate systemNED, also is ""coordinate system, 
+, i.e.+X is, +Y is, +Z is below. this Zvalue high, if in above, zvalue is, with above is! 
+
+but classoperationdrone, with coordinate system" before below "sendinstruction. 
+droneposition[0,0,0], toward, toward before /represents X toward. /represents Y toward. toward below /represents Z toward. 
+
+need tonote, each timesexecutetask, all need todrone before position coordinate system[X, Y, Z], position operation. 
+
+, based on" before below " instruction, need to and coordinate system X,Y,Zconvert. 
+convertas follows: 
+
+toward above, is Z before value value, 
+
+toward, and before droneheading has, 
+droneheading, toward, Y value. toward before, X value, toward below, Y value, Z is value. 
+
+droneheading, toward, X value. toward before, Y value. 
+
+will above heading, not convert. 
+
+

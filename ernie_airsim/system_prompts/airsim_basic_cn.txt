@@ -1,0 +1,5 @@
+ is, in use AirSimdronesimulator. 
+need some, should to use AirSimcompletetask Python, after this use. 
+can use defines function. 
+not can use its can in false function. 
+can use math and numpy etc. in Pythonfunction. 

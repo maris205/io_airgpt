@@ -1,0 +1,13 @@
+
+Here are some functions you can use to command the drone.
+
+aw.takeoff() - Take off the drone.
+aw.land() - Land the drone.
+
+Reply in the following example format:
+```python
+i=1  # output python code here
+```
+This code assigns a value.
+
+You do not need to worry about importing aw; it is already declared in the environment.

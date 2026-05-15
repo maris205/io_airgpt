@@ -1,0 +1,189 @@
+, use is coordinate systemNED, also is ""coordinate system, 
+, i.e.+X is, +Y is, +Z is below. this Zvalue high, if in above, zvalue is, with above is! 
+
+but classoperationdrone, with coordinate system" before below "sendinstruction. 
+droneposition[0,0,0], toward, toward before /represents X toward. /represents Y toward. toward below /represents Z toward. 
+
+need tonote, each timesexecutetask, all need todrone before position coordinate system[X, Y, Z], position operation. 
+
+, based on" before below " instruction, need to and coordinate system X,Y,Zconvert. 
+convertas follows: 
+
+toward above, is Z before value value, 
+
+toward, and before droneheading has, 
+droneheading, toward, Y value. toward before, X value, toward below, Y value, Z is value. 
+
+droneheading, toward, X value. toward before, Y value. 
+
+will above heading, not convert. 
+
+
+below is,: 
+
+1 
+as follows: 
+, The following aredrone Python: 
+
+```python
+aw.takeoff()
+```
+
+use "takeoff()"functioncommanddrone. drone from before positionbegin. 
+
+
+2 above 
+as follows: 
+, The following are above Python: 
+
+```python
+car_position = aw.get_position("car")
+aw.fly_to([car_position[0], car_position[1], car_position[2]+10])
+```
+
+use "get_position()"functionget before position, its in variable"car_position" in. after, create new positionlist, its in contains and X and Y, but Z 10. after, use "fly_to()"functioncommanddrone this new position, i.e. above 10. 
+
+3 
+as follows: 
+python_code: good, The following aredrone: 
+
+```python
+aw.takeoff()
+```
+
+: use `takeoff()`functiondrone. 
+
+4 wind turbine1,X and wind turbine3distance toward wind turbine
+as follows: 
+good, The following areX and wind turbine13distance toward wind turbine: 
+
+```python
+turbine1_position = aw.get_position("turbine1")
+target_position = [turbine1_position[0]+3, turbine1_position[1], turbine1_position[2]]
+aw.fly_to(target_position)
+```
+
+: use `get_position()`functiongetwind turbine1 position, its in `turbine1_position`variable in. after create new list`target_position`, its in containswind turbine1 X above 3, wind turbine1 Y and Z. after, use `fly_to()`functiondronetargetposition. 
+
+5 use 2wind turbine. X and wind turbine212distance toward turbine, 50 altitude position. 
+as follows: 
+, before in in. Z toward toward, toward toward, therefore in settargetposition Z, should use representsaltitude., shouldtargetposition Zset-50, with representsdrone need 50 altitude. The following are after: 
+
+```python
+turbine2_position = aw.get_position("turbine2")
+target_position = [turbine2_position[0]+12, turbine2_position[1], -50]
+aw.fly_to(target_position)
+```
+
+times. 
+
+6 in let begincheckwind turbine. # toward above, before position above 30, after times toward below. 
+as follows: 
+good, The following are before position above 30, after times toward below: 
+
+```python
+current_position = aw.get_drone_position()
+up_position = [current_position[0], current_position[1], current_position[2]-30]
+aw.fly_to(up_position)
+down_position = [current_position[0], current_position[1], current_position[2]]
+aw.fly_to(down_position)
+```
+
+: use `get_drone_position()`functiongetdrone before position, its in `current_position`variable in. after create new list`up_position`, its in containsdrone before X and Y, as well asZ30 (because toward above need to small Z value). use `fly_to()`functiondrone above 30 position., create new list`down_position`, its in containsdrone before X and Y, as well as Z, use `fly_to()`functiondroneposition. 
+
+7 check #, need to with and -30 below toward. should in YZ above 30 distance, after return before position. 
+as follows: 
+
+good, below is implements: 
+
+```python
+import math
+
+# getdrone before position
+current_position = aw.get_drone_position()
+
+# calculatedrone and -30 below toward targetposition
+# use functioncalculatetargetposition Y and Z
+angle = math.radians(-30) # angleconvertradians
+target_y = current_position[1] + 30 * math.cos(angle)
+target_z = current_position[2] + abs(30 * math.sin(angle)) # use for value above 
+target_position = [current_position[0], target_y, target_z]
+
+# and -30 below toward 30
+aw.fly_to(target_position)
+
+# Return before position
+aw.fly_to(current_position)
+
+```
+
+8 in need tocheck. need to, but after below, no return
+as follows: 
+
+good, below is implements: 
+
+```python
+import math
+
+# getdrone before position
+current_position = aw.get_drone_position()
+
+# calculatedrone and -30 below toward targetposition
+# use functioncalculatetargetposition Y and Z
+angle = math.radians(-30) # angleconvertradians
+target_y = current_position[1] + 30 * math.cos(angle)
+target_z = current_position[2] + abs(30 * math.sin(angle)) # use for value above 
+target_position = [current_position[0], target_y, target_z]
+
+# and -30 below toward 30
+aw.fly_to(target_position)
+
+```
+
+9 in toward before, wind turbine after. in X above 20, above between, after drone 180. can use set_yaw() functiondrone. 
+as follows: 
+
+good, below is implements: 
+
+```python
+
+# getdrone before position
+current_position = aw.get_drone_position()
+
+# calculatedrone toward before targetposition
+target_position = [current_position[0] + 20 + 5, current_position[1], current_position[2]] # above 5 between 
+
+# toward before wind turbine after 
+aw.fly_to(target_position)
+
+# 180
+aw.set_yaw(180)
+
+```
+
+10 good! in need check. this and before all, also is, above toward. 
+as follows: 
+
+good, below is implements: 
+
+```python
+import math
+
+# getdrone before position
+current_position = aw.get_drone_position()
+
+# calculatedrone above toward targetposition
+# use functioncalculatetargetposition Y and Z
+angle = math.radians(30) # angleconvertradians
+target_y = current_position[1] - 30 * math.cos(angle) # Y 
+target_z = current_position[2] - 30 * math.sin(angle) # Z 
+target_position = [current_position[0], target_y, target_z]
+
+# above toward 30
+aw.fly_to(target_position)
+
+```
+
+
+
+
